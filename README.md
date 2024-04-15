@@ -4,14 +4,6 @@
 
 Comandos:
 
-Testing:
-
-```sh
-npm run test
-```
-
-Ejecuta los tests ignorando los que existan en dist/
-
 Hello-world:
 
 ```sh
@@ -29,62 +21,84 @@ Suma todos los numeros de la lista
 Filtered-js:
 
 ```sh
-node filtered-js [path] [extension]
+node filtered-ls.js [ruta] [extension]
 ```
 
-Muestra los archivos que contenga el path que tengas la extension
+Muestra los archivos contenidos en el directorio con la extensión especificada. 
 
-Build:
+
+My-first-io y my-first-async-io:
 
 ```sh
-npm run build
+node my-first-io.js [archivo]
+```
+```sh
+node my-first-async-io.js [archivo]
 ```
 
-Transpila el proyecto en dist/
+Cuenta el nº de caracteres del archivo. Debe pasarse la ruta completa.
 
+
+Make-it-modular:
+
+```sh
+node make-it-modular.js [ruta] [extension]
+```
+Muestra los nombres de los archivos devueltos por la función mymodule.js (filtered-ls.js dividido en dos módulos)
+
+
+
+Http-client y http-file-server
 ---
 ```sh
-npm run build
+node http-file-server.js [puerto][archivo]
+```
+```sh
+node http-client.js [direccion]
 ```
 
-Transpila el proyecto en dist/
+Primer comando: Inicia un servidor http que devuelve el archivo especificado a cualquier petición. 
+Segundo comando: envia peticiones http
 
+
+http-collect
 ---
 ```sh
-npm run build
+node http-collect.js [direccion]
 ```
 
-Transpila el proyecto en dist/
+Realiza una petición http a la direccion especificada y muestra por pantalla toda la información recibida.
 
+juggling-async.js
 ---
 ```sh
-npm run build
+node juggling-async.js [direccion1][direccion2][direccion3]
 ```
 
-Transpila el proyecto en dist/
+Realiza una tres peticiones http y muestra por pantalla toda la información recibida en el orden especificado.
 
+Time-server
 ---
-
-## Debugger
-
-en el archivo .vscode/launch.json está la configuración del debugger.
-
-```json
-{
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Lanza debug",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/src/index.ts",
-      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
-    }
-  ]
-}
+```sh
+node time-server.js [puerto]
 ```
+
+Inicia un servidor tcp !!! crear cliente?
+
+Http-uppercaserer
+---
+```sh
+node http-uppercaserer.js [puerto]
+```
+
+Inicia un servidor http. Solo acepta peticiones POST. Devuelve el contenido de la petición en mayúsculas
+
+Http-json-api-server
+---
+```sh
+node http-json-api-server.js [puerto][ruta]
+```
+
+Inicia un servidor http que acepta peticiones a dos rutas distintas, /api/parsetime y /api/unixtime. 
+
+
