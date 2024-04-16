@@ -46,7 +46,6 @@ node make-it-modular.js [ruta] [extension]
 Muestra los nombres de los archivos devueltos por la función mymodule.js (filtered-ls.js dividido en dos módulos)
 
 
-
 Http-client y http-file-server
 ---
 ```sh
@@ -56,7 +55,7 @@ node http-file-server.js [puerto][archivo]
 node http-client.js [direccion]
 ```
 
-Primer comando: Inicia un servidor http que devuelve el archivo especificado a cualquier petición. 
+Primer comando: Inicia servidor http que devuelve el archivo especificado a cualquier petición. 
 Segundo comando: envia peticiones http
 
 
@@ -82,7 +81,12 @@ Time-server
 node time-server.js [puerto]
 ```
 
-Inicia un servidor tcp !!! crear cliente?
+Inicia servidor tcp.
+
+```sh
+node tcp-client.js [puerto]
+```
+Script para conectarse al servidor tcp.
 
 Http-uppercaserer
 ---
@@ -90,15 +94,21 @@ Http-uppercaserer
 node http-uppercaserer.js [puerto]
 ```
 
-Inicia un servidor http. Solo acepta peticiones POST. Devuelve el contenido de la petición en mayúsculas
+Inicia servidor http. Solo acepta peticiones POST. Devuelve el contenido de la petición en mayúsculas
+
+---
+```sh
+node http-post.js [url][contenido]
+```
+Script para enviar peticiones post al servidor.
 
 Http-json-api-server
 ---
 ```sh
-node http-json-api-server.js [puerto][ruta]
+node http-json-api-server.js [puerto][direccion]
 ```
 
-Inicia un servidor http que acepta peticiones a dos rutas distintas, /api/parsetime y /api/unixtime. 
+Inicia servidor http que acepta peticiones a dos rutas distintas, /api/parsetime y /api/unixtime. Ambas deben contener un query string con una clave iso y el tiempo en formato ISO como valor. 
 
 
 
